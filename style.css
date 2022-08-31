@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #030a1b;
+    perspective: 40rem;
+}
+
+.menu {
+    width: 100%;
+    padding: 0 10rem;
+    display: flex;
+    justify-content: space-evenly;
+    transform-style: preserve-3d;
+}
+
+.menu-item {
+    width: 20rem;
+    height: 15rem;
+    background-color: #5588dd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 2rem rgba(100,100,255,0.4);
+}
+
+.change.menu .menu-item {
+    transform: rotateX(0) rotateY(0) translate3d(0,0,0);
+    opacity: 1;
+}
+
+.menu-item:not(.center-item) {
+    opacity: 0;
+}
+
+.menu-item:hover {
+    background-color: #ccccff;
+    box-shadow: 0 0 3rem rgba(100,100,255,0.6);
+}
+
+.menu-item:nth-child(1) {
+    transform: rotateY(-70deg) rotateX(20deg) 
+    translate3d(-50rem, -15rem, -50rem);
+    transition: transform ease-in 1.2s, opacity 1s ease-in,
+    box-shadow .5s, background-color .5s;
+}
+
+.menu-item:nth-child(2) {
+    transform: rotateY(-70deg) rotateX(20deg) 
+    translate3d(-20rem, -5rem, -20rem);
+    transition: transform ease-in 1s, opacity 1s ease-in,
+    box-shadow .5s, background-color .5s;
+}
+
+.menu-item:nth-child(3) {
+    transform: rotateX(20deg);
+    transition: transform ease-in 1s,
+    box-shadow .5s, background-color .5s;
+}
+
+.menu-item:nth-child(4) {
+    transform: rotateY(70deg) rotateX(20deg) 
+    translate3d(20rem, -5rem, -20rem);
+    transition: transform ease-in 1s, opacity 1s ease-in,
+    box-shadow .5s, background-color .5s;
+}
+
+.menu-item:nth-child(5) {
+    transform: rotateY(70deg) rotateX(20deg) 
+    translate3d(50rem, -5rem, -50rem);
+    transition: transform ease-in 1.2s, opacity 1s ease-in,
+    box-shadow .5s, background-color .5s;
+}
+
+.menu-item i {
+    font-size: 7rem;
+    color: #222;
+    transition: color .5s
+}
+
+.menu-item:hover i {
+    color: #6464ff;
+}
